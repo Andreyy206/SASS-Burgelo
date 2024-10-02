@@ -112,6 +112,8 @@
       margin: 1.5rem 0;
     }
   }
+
+  
   @include mediaQuery($break-lg) {
     &__wrapper{
       display: grid;
@@ -132,3 +134,53 @@
     }
   }
 }
+.order {
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__delivery {
+    font-family: Candara;
+    h2 {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      font-size: 3rem;
+      font-weight: 400;
+      
+      a {
+        color: $clr-primary;
+      }
+    }
+    p{
+      font-family: Candara;
+      text-align: justify;
+      margin: 1.5rem 0;
+    }
+  }
+
+  
+  @include mediaQuery($break-lg) {
+    &__wrapper{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      
+    }
+
+    &__card:nth-child(odd){
+      display: flex;
+      flex-direction: column-reverse;
+      grid-gap: 2rem;
+    }
+
+    &__card:nth-child(even){
+      display: flex;
+      flex-direction: column;
+      grid-gap: 8rem;
+    }
+  }
+}
+
+
