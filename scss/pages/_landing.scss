@@ -1,2 +1,134 @@
-@use "../abstract/" as*;
+@use "../abstract/" as *;
+@use "../base/" as *;
+@use "../components/" as *;
 
+.banner {
+  &__wrapper {
+    background-image: url("/dist/IMG/banner.webp");
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+  }
+  &__content {
+    margin-left: 2rem;
+  }
+  &__text {
+    max-width: 30rem;
+
+    h1 {
+      color: $clr-light;
+      font-size: 4rem;
+      font-weight: 400;
+      letter-spacing: 2rem;
+    }
+    p {
+      color: $clr-light;
+      font-weight: 400;
+      font-family: Candara;
+      margin: 1rem 0;
+    }
+  }
+  @include mediaQuery($break-lg) {
+    &__content {
+      margin-left: 8rem;
+    }
+    &__text {
+      transform: translate(8rem, -5rem);
+    }
+  }
+}
+
+.best {
+  &__price {
+    display: flex;
+    flex-direction: column;
+  }
+  &__text__title {
+    p {
+      letter-spacing: 1.5rem;
+    }
+    h2 {
+      font-weight: 4rem;
+      margin-bottom: 2rem;
+      font-size: 3rem;
+      letter-spacing: 0.6rem;
+    }
+  }
+  &__text__social {
+    p {
+      text-align: justify;
+      margin: 2rem 0;
+      font-family: Candara;
+    }
+    ul {
+      display: flex;
+      font-size: 2rem;
+      gap: 2rem;
+      justify-content: center;
+    }
+    i {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  @include mediaQuery($break-lg) {
+    &__price {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+.food {
+  &__card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__details {
+    h2 {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      font-size: 3rem;
+      font-weight: 400;
+      
+      span {
+        color: $clr-primary;
+      }
+    }
+    h1{
+      font-size: 4rem;
+      font-weight: 400;
+      
+    }
+    p{
+      font-family: Candara;
+      text-align: justify;
+      margin: 1.5rem 0;
+    }
+  }
+  @include mediaQuery($break-lg) {
+    &__wrapper{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      
+    }
+
+    &__card:nth-child(odd){
+      display: flex;
+      flex-direction: column-reverse;
+      grid-gap: 2rem;
+    }
+
+    &__card:nth-child(even){
+      display: flex;
+      flex-direction: column;
+      grid-gap: 8rem;
+    }
+  }
+}

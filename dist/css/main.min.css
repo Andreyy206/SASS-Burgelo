@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-  max-width: 100rem;
+  max-width: 130rem;
   margin: 0 auto;
   padding: 1.5rem;
   width: 100%;
@@ -30,6 +30,23 @@ a {
 
 ul, li {
   list-style: none;
+}
+
+.btn {
+  display: inline-block;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-family: Candara;
+  border-radius: 5rem;
+  transition: 0.5s ease;
+}
+.btn:hover {
+  scale: 1.1;
+  transition: 0.5s ease;
+}
+.btn.bg--primary {
+  background: #ffc139;
 }
 
 .header {
@@ -58,12 +75,21 @@ ul, li {
   background-color: #ffffff;
   display: block;
   border-radius: 5rem;
+  transition: 0.5s ease;
 }
 .header .branding .toggle__menu span:nth-child(2) {
   margin: 0.5rem 0;
 }
-.header .branding__actions .header__extra {
-  display: flex;
+.header .branding .toggle__menu.open span:first-child {
+  transform: translateY(7px) rotate(225deg);
+  transition: 0.5s ease;
+}
+.header .branding .toggle__menu.open span:last-child {
+  transform: translateY(-9px) rotate(-225deg);
+  transition: 0.5s ease;
+}
+.header .branding .toggle__menu.open span:nth-child(2) {
+  opacity: 0;
 }
 .header__details {
   margin: 2rem 0;
@@ -80,6 +106,10 @@ ul, li {
 .header__details h4 i {
   color: #ffc139;
   font-size: 2.5rem;
+}
+.header__details h4 span {
+  font-weight: 400;
+  font-size: 1.2rem;
 }
 .header__actions {
   display: flex;
@@ -191,5 +221,116 @@ ul, li {
   .header__actions ul.header__nav li:hover::after {
     content: "";
     display: none;
+  }
+}
+
+.banner__wrapper {
+  background-image: url("/dist/IMG/banner.webp");
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+.banner__content {
+  margin-left: 2rem;
+}
+.banner__text {
+  max-width: 30rem;
+}
+.banner__text h1 {
+  color: #ffffff;
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: 2rem;
+}
+.banner__text p {
+  color: #ffffff;
+  font-weight: 400;
+  font-family: Candara;
+  margin: 1rem 0;
+}
+@media screen and (min-width: 1024px) {
+  .banner__content {
+    margin-left: 8rem;
+  }
+  .banner__text {
+    transform: translate(8rem, -5rem);
+  }
+}
+
+.best__price {
+  display: flex;
+  flex-direction: column;
+}
+.best__text__title p {
+  letter-spacing: 1.5rem;
+}
+.best__text__title h2 {
+  font-weight: 4rem;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  letter-spacing: 0.6rem;
+}
+.best__text__social p {
+  text-align: justify;
+  margin: 2rem 0;
+  font-family: Candara;
+}
+.best__text__social ul {
+  display: flex;
+  font-size: 2rem;
+  gap: 2rem;
+  justify-content: center;
+}
+.best__text__social i {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1024px) {
+  .best__price {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.food__card {
+  display: flex;
+  flex-direction: column;
+}
+.food__details h2 {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 3rem;
+  font-weight: 400;
+}
+.food__details h2 span {
+  color: #ffc139;
+}
+.food__details h1 {
+  font-size: 4rem;
+  font-weight: 400;
+}
+.food__details p {
+  font-family: Candara;
+  text-align: justify;
+  margin: 1.5rem 0;
+}
+@media screen and (min-width: 1024px) {
+  .food__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .food__card:nth-child(odd) {
+    display: flex;
+    flex-direction: column-reverse;
+    grid-gap: 2rem;
+  }
+  .food__card:nth-child(even) {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 8rem;
   }
 }/*# sourceMappingURL=main.min.css.map */
