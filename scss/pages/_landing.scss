@@ -114,6 +114,7 @@
       font-weight: 75;
     }
   }
+
   @include mediaQuery($break-lg) {
     &__wrapper {
       display: grid;
@@ -134,51 +135,48 @@
   }
 }
 .order {
-  flex-direction: column;
-  &__wrapper {
-    background: #f7f8fa;
-    padding: 2.5rem 2rem;
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
   &__delivery {
+    font-family: Candara;
     h2 {
       display: flex;
+      flex-direction: row;
       gap: 1rem;
       font-size: 3rem;
       font-weight: 400;
-      align-content: center;
-    }
-    a {
-      color: $clr-primary;
+
+      a {
+        color: $clr-primary;
+      }
     }
     p {
       font-family: Candara;
-      font-weight: 350;
-      text-align: center;
+      text-align: justify;
+      margin: 1.5rem 0;
     }
   }
+
   @include mediaQuery($break-lg) {
     &__wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      align-items: center;
-    }
-    &__card {
-      img {
-        max-width: 80%;
-        max-height: 25rem;
-        margin: 0 auto;
-      }
-    }
-    &__card:nth-child(even) {
-      display: flex;
-      flex-direction: column-reverse;
-      // gap: 2rem;
     }
 
     &__card:nth-child(odd) {
       display: flex;
+      flex-direction: column-reverse;
+      grid-gap: 2rem;
+    }
+
+    &__card:nth-child(even) {
+      display: flex;
       flex-direction: column;
-      // gap: 8rem;
+      grid-gap: 8rem;
     }
   }
 }
@@ -188,7 +186,6 @@
   &__wrapper {
     @include gridEven(1, 2rem);
   }
-
   &__center {
     position: relative;
     @include centerAll;
@@ -199,7 +196,6 @@
     &__text {
       position: absolute;
       text-align: center;
-      top: 38%;
       h3 {
         font-size: 4rem;
         font-weight: 400;
@@ -216,7 +212,6 @@
   }
   &__side {
     position: relative;
-
     img {
       height: 680px;
       width: 100%;
@@ -224,16 +219,10 @@
     &__text {
       position: absolute;
       z-index: 100;
-
       img {
         height: 10rem;
         width: 20rem;
       }
-    }
-    &:first-child {
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
     &#happy {
       display: flex;
@@ -272,7 +261,6 @@
       }
     }
   }
-
   @include mediaQuery($break-lg) {
     &__wrapper {
       @include gridUneven(1fr 2fr 1fr, 2rem);
@@ -307,50 +295,50 @@
   }
 }
 
-.meal{
+.meal {
   padding: 2.5rem 0;
   background: $clr-light;
-  &__nav{
-    ul{
+  &__nav {
+    ul {
       display: flex;
       max-width: 40rem;
       flex-wrap: wrap;
       margin: 0 auto;
       justify-content: center;
-      li.meal__nav__link{
+      li.meal__nav__link {
         padding: 2rem;
         text-align: center;
-        h4{
+        h4 {
           font-weight: 400;
         }
-        img{
+        img {
           max-width: 5rem;
         }
-        &.active{
-          h4{
+        &.active {
+          h4 {
             color: $clr-primary;
           }
         }
       }
     }
   }
-  &__content{
-    .meal__nav__content{
+  &__content {
+    .meal__nav__content {
       display: none;
-      &.active{
+      &.active {
         display: block;
       }
     }
   }
-  @include mediaQuery($break-lg){
-    &__nav{
-      ul{
+  @include mediaQuery($break-lg) {
+    &__nav {
+      ul {
         display: flex;
         max-width: 100rem;
         justify-content: space-between;
         flex-wrap: nowrap;
-        li.meal__nav__link{
-          img{
+        li.meal__nav__link {
+          img {
             max-width: 100%;
           }
         }
@@ -358,6 +346,7 @@
     }
   }
 }
+
 .links {
   padding: 2.5rem 0;
   &__item {
@@ -394,6 +383,8 @@
           outline: none;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
             rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+            rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
         }
       }
       a {
@@ -404,7 +395,6 @@
         }
       }
     }
-
     &__social {
       display: flex;
       align-items: center;
@@ -434,36 +424,34 @@
         }
       }
       tr:nth-child(2) {
-        td:nth-child(2) {
+        td:last-child {
           font-size: 3rem;
           font-weight: 400;
           &:hover {
             color: $clr-primary;
-            cursor:pointer;
+            cursor: pointer;
           }
         }
       }
     }
   }
-  @include mediaQuery($break-lg){
-    &__wrapper{
-      @include gridEven(3,5rem);
+  @include mediaQuery($break-lg) {
+    &__wrapper {
+      @include gridEven(3, 5rem);
     }
-    &__item{
-      &:first-child{
-        order:3;
+    &__item {
+      &:first-child {
+        order: 3;
       }
-
-      ul.links__ig{
-      @include gridEven(4,3rem);
+      ul.links__ig {
+        @include gridEven(4, 3rem);
+      }
     }
-    }
-
   }
 }
 
 .gMap {
-  padding: 5rem 0;
+  padding: 2.5rem 0;
   .mapouter {
     position: relative;
     text-align: right;
@@ -479,5 +467,65 @@
   .gmap_iframe {
     width: 100% !important;
     height: 400px !important;
+  }
+}
+
+.order {
+  &_card {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #f5f5f5;
+    padding: 5rem 2rem;
+  }
+  &_info {
+    padding: 2rem 0;
+    h1 {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      font-size: 3rem;
+      font-weight: 400;
+    }
+    p {
+      text-align: center;
+      font-weight: 100;
+    }
+    i {
+      color: $clr-primary;
+    }
+  }
+  img {
+    align-items: center;
+  }
+
+  @include mediaQuery($break-lg) {
+    .order {
+      &_wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      &_card:nth-child(even) {
+        display: flex;
+        flex-direction: column;
+      }
+      &_card:nth-child(odd) {
+        display: flex;
+      }
+      &_info {
+        h1 {
+          flex-direction: row;
+          justify-content: center;
+          gap: 3rem;
+        }
+        span {
+          font-size: 5rem;
+        }
+        p {
+          font-size: 1.8rem;
+          letter-spacing: 0.2rem;
+          font-weight: 50;
+        }
+      }
+    }
   }
 }
