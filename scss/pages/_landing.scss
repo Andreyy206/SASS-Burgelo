@@ -294,10 +294,11 @@
     }
   }
 }
+
 .favorite{
   padding: 2.5rem 0;
   .container{
-    background: #f4f6f3;
+    background: $clr-light;
     padding: 2.5rem;
   }
   h2{
